@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/alarmListFragment">
+
+    <fragment
+        android:id="@+id/alarmListFragment"
+        android:name="com.example.alarmmanager.AlarmListFragment"
+        android:label="fragment_alarm_list"
+        tools:layout="@layout/fragment_alarm_list">
+        <action
+            android:id="@+id/action_alarmListFragment_to_createAlarmFragment"
+            app:destination="@id/createAlarmFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/createAlarmFragment"
+        android:name="com.example.alarmmanager.CreateAlarmFragment"
+        android:label="fragment_create_alarm"
+        tools:layout="@layout/fragment_create_alarm" />
+
+    <fragment
+        android:id="@+id/stopAlarmFragment"
+        android:name="com.example.alarmmanager.StopAlarmFragment"
+        android:label="fragment_stop_alarm"
+        tools:layout="@layout/fragment_stop_alarm">
+        <!-- Correct placement of the argument definition -->
+        <argument
+            android:name="alarmId"
+            app:argType="integer"/>
+    </fragment>
+
+</navigation>
